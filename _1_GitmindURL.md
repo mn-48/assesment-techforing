@@ -80,6 +80,7 @@ Based on your mind map here’s a **multi-tenant microservice architecture diagr
 |------------------|-------------------------|
 | Frontend         | SwiftUI (iOS), Kotlin (Android) |
 | API Gateway      | Kong / NGINX / Express Middleware |
+| API Communicate  | RabbitMQ/Kafka/PubSub/SQS |
 | Microservices    | Python Django/FastAPI/Flask     |
 | Databases        | MongoDB (per-service, tenant-scoped) |
 | Auth             | JWT + OAuth2            |
