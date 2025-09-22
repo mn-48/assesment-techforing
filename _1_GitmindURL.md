@@ -8,54 +8,54 @@ Based on your mind map here’s a **multi-tenant microservice architecture diagr
 
 ```plaintext
                         ┌────────────────────────────┐
-                        │        Mobile Clients       │
-                        │  (iOS / Android Frontend)   │
+                        │        Mobile Clients      │
+                        │  (iOS / Android Frontend)  │
                         └────────────┬───────────────┘
                                      │
                           ┌──────────▼──────────┐
                           │   API Gateway       │
-                          │ (Tenant-aware Routing│
+                          │(Tenant-aware Routing│
                           └──────────┬──────────┘
                                      │
          ┌───────────────────────────┼────────────────────────────┐
          │                           │                            │
 ┌────────▼────────┐       ┌──────────▼─────────┐        ┌─────────▼─────────┐
 │ Authentication  │       │   User Service     │        │   Client Service  │
-│  Microservice    │       │ (Profile, Prefs)   │        │ (Profile, Prefs) │
+│  Microservice   │       │ (Profile, Prefs)   │        │ (Profile, Prefs) │
 └────────┬────────┘       └──────────┬─────────┘        └─────────┬─────────┘
          │                           │                            │
          ▼                           ▼                            ▼
-┌────────────┐             ┌────────────────┐           ┌─────────────────┐
-│ Auth DB     │             │ User DB (Mongo)│           │ Client DB (Mongo)│
-│ (Tenant ID) │             │ (Tenant Scoped)│           │ (Tenant Scoped) │
-└────────────┘             └────────────────┘           └─────────────────┘
+┌────────────┐             ┌────────────────┐           ┌────────────────-─┐
+│ Auth DB    │             │ User DB (Mongo)│           │ Client DB (Mongo)│
+│ (Tenant ID)│             │ (Tenant Scoped)│           │ (Tenant Scoped)  │
+└────────────┘             └────────────────┘           └────────────────-─┘
 
          ┌────────────────────────────┐
          │     Notification Service   │
          └────────────┬───────────────┘
                       ▼
-              ┌───────────────┐
-              │ Notification DB│
+              ┌─────────────────┐
+              │ Notification DB │
               │  (Tenant Scoped)│
-              └───────────────┘
+              └─────────────────┘
 
          ┌────────────────────────────┐
          │     Dashboard Service      │
          └────────────┬───────────────┘
                       ▼
-              ┌───────────────┐
-              │ Dashboard DB  │
-              │ (Tenant Scoped)│
-              └───────────────┘
+              ┌─────────────────┐
+              │ Dashboard DB    │
+              │ (Tenant Scoped) │
+              └─────────────────┘
 
          ┌────────────────────────────┐
          │   Customer Support Service │
          └────────────┬───────────────┘
                       ▼
-              ┌───────────────┐
-              │ Support DB    │
-              │ (Tenant Scoped)│
-              └───────────────┘
+              ┌─────────────────┐
+              │ Support DB      │
+              │ (Tenant Scoped) │
+              └─────────────────┘
 
          ┌────────────────────────────┐
          │     Privacy & Policy       │
