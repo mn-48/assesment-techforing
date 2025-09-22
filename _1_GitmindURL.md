@@ -84,6 +84,7 @@ Based on your mind map here’s a **multi-tenant microservice architecture diagr
 | Microservices    | Python Django/FastAPI/Flask     |
 | Databases        | MongoDB (per-service, tenant-scoped) |
 | Auth             | JWT + OAuth2            |
+| Caching          | Redis Server            |
 | Deployment       | Docker + Kubernetes     |
 | Monitoring       | Prometheus + Grafana    |
 | CI/CD            | GitHub Actions / GitLab CI |
